@@ -22,3 +22,50 @@ https://www.youtube.com/watch?v=bO6xBjIx9JQ
 
 https://www.youtube.com/watch?v=9RMvKWHgyF8
 深聊灵巧手的“不可能三角”与六大技术门派｜机器人系列
+
+Date:2026-01-21
+PMCID: PMC8694284
+https://pmc.ncbi.nlm.nih.gov/articles/PMC8694284/
+
+作者开发了两种完全植入式、无电池、柔性封装的无线光遗传平台：
+
+头戴式（Head-Mounted, HM）：尺寸小（~10×12 mm²），可植入小鼠颅骨下，支持双通道独立控制。
+背戴式（Back-Mounted, BM）：利用背部更大空间，支持四通道独立μ-ILED（微型LED），可同时靶向多个脑区或外周神经。
+两者均通过 13.56 MHz 射频（RF）磁场感应供电，并采用 NFC（近场通信）协议实现实时双向通信。
+
+https://github.com/A-VazquezGuardado/Real-time_control_Optogenetics
+一、NFC组件设计
+1. 核心功能
+实现 实时双向无线通信（非仅预设程序）
+支持 独立寻址多个设备（每台设备有唯一64位UID）
+允许用户在实验中动态调整光刺激参数（频率、脉宽、强度、模式）
+2. 硬件组成（见 Methods & Extended Data Fig. 1）
+NFC芯片：STMicroelectronics 的 M24LR04E-R
+符合 ISO/IEC 15693 协议（13.56 MHz）
+提供 4 Kbit EEPROM，可被外部读写器访问
+微控制器：Atmel（现 Microchip）的 ATtiny84（8-bit, 4×4 mm²）
+通过 I²C 接口读取 NFC 芯片中的参数
+运行自定义固件，生成多通道 AM-DS（幅度调制数字信号）
+射频供电与通信天线：
+外部双环天线（30×30 cm²）环绕行为箱
+13.56 MHz 磁感应耦合，为设备无线供电 + 通信
+3. 控制逻辑
+用户通过 PC 上的 MATLAB GUI 发送指令
+指令经 Feig LRM2500-A NFC 读写器 → 通过同一射频场写入目标设备的 NFC EEPROM
+微控制器检测到 EEPROM 更新后，立即加载新参数，调整 μ-ILED 输出
+✅ 关键创新：将 NFC 从“只读标签”升级为“可编程执行单元”，实现毫秒级实时调控。
+
+二、柔性电路设计
+1. 材料与结构
+基底：铜-聚酰亚胺-铜三层柔性覆铜板（Pyralux®, 18/75/18 μm）
+互连：
+头戴式（HM）：蛇形铜迹线（serpentine traces），直接贴合颅骨
+背戴式（BM）：更复杂的可拉伸互连，由 Ti/Cu/Ti/Au 多层金属 + Ecoflex/Parylene 封装
+封装：
+内层：Parylene C（14 μm，化学气相沉积）
+外层：PDMS 或 Ecoflex（软硅胶，~200–800 μm），提供生物相容性与机械顺应性
+探针：集成 μ-ILED（460/535/590/630 nm），带钨丝加强针便于脑内植入
+2. 机械性能
+BM 互连可承受 >50% 拉伸应变（10,000 次循环无电阻变化）
+弯曲半径低至 2.5 mm，适应小鼠颈部自然运动
+行为学验证：不影响运动、探索、社交等自然行为
