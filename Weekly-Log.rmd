@@ -25,7 +25,11 @@ https://www.youtube.com/watch?v=9RMvKWHgyF8
 
 Date:2026-01-21
 PMCID: PMC8694284
-https://pmc.ncbi.nlm.nih.gov/articles/PMC8694284/
+        
+        
+https://pmc.ncbi.nlm.nih.gov/articles/PMC8694284
+        
+        /
 
 作者开发了两种完全植入式、无电池、柔性封装的无线光遗传平台：
 
@@ -69,3 +73,7 @@ NFC芯片：STMicroelectronics 的 M24LR04E-R
 BM 互连可承受 >50% 拉伸应变（10,000 次循环无电阻变化）
 弯曲半径低至 2.5 mm，适应小鼠颈部自然运动
 行为学验证：不影响运动、探索、社交等自然行为
+
+Date:2026-01-26
+以3D打印为主的开源灵巧手项目，为后续鼠机接口精准手术作准备
+https://github.com/alarisnu/alaris_hand/tree/main
