@@ -1,4 +1,4 @@
-# Neuro-Ortho Lab AI Copilot整合行动框架：从A到C的三步走战略
+# AI Lab Copilot整合行动框架：从A到C的三步走战略
 
 ## 第一步：立即启动A（产品化）—— 但为C注入灵魂
 产品命名与定位： “Neuro-Ortho Lab AI Copilot” 或 “智研工作站”。定位是：“为神经与骨科实验者提供的，融合自动化分析与前沿AI工作流的本地化智能平台”。
